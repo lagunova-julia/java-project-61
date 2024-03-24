@@ -1,6 +1,7 @@
 package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 import java.util.Scanner;
 
@@ -27,8 +28,12 @@ public class Engine {
             Calc.secondGame();
             question2 = Calc.question2;
             correctAnswer = Calc.correctAnswer;
+        } else if (App.gameNumber == 4) {
+            question1 = GCD.question1;
+            GCD.thirdGame();
+            question2 = GCD.question2;
+            correctAnswer = GCD.correctAnswer;
         }
-
     }
 
     public static void playGame() {
