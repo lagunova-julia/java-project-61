@@ -8,3 +8,6 @@ Game 'Even'
 
 Game 'Calc'
 <a href="https://asciinema.org/a/9H4AjThN265oWlReBPyHMH2NM" target="_blank"><img src="https://asciinema.org/a/9H4AjThN265oWlReBPyHMH2NM.svg" /></a>
+
+Game 'GCD'
+<a href="https://asciinema.org/a/O4HMBioqZqAZZDNvWhgnzwRFz" target="_blank"><img src="https://asciinema.org/a/O4HMBioqZqAZZDNvWhgnzwRFz.svg" /></a>
