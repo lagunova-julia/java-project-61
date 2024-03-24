@@ -5,3 +5,6 @@
 
 Game 'Even'
 <a href="https://asciinema.org/a/l1NRCdV2whWBbbZfZuYtRGVO6" target="_blank"><img src="https://asciinema.org/a/l1NRCdV2whWBbbZfZuYtRGVO6.svg" /></a>
+
+Game 'Calc'
+<a href="https://asciinema.org/a/9H4AjThN265oWlReBPyHMH2NM" target="_blank"><img src="https://asciinema.org/a/9H4AjThN265oWlReBPyHMH2NM.svg" /></a>
