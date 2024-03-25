@@ -16,7 +16,7 @@ public class Progression {
             }
         }
         int n = (int) (Math.random() * 10) + 5;
-        int answerPlace = (int) (Math.random() * 10);
+        int answerPlace = (int) (Math.random() * n);
         // составление прогрессии
         int[] progression = new int[n];
         progression[0] = a;
@@ -33,6 +33,7 @@ public class Progression {
         // заполнение места пропуска ..
         newProgression[answerPlace] = "..";
         // составляем выражение вопрос
-        question2 = Arrays.toString(newProgression);
+        var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
+        question2 = tempStr.trim();
     }
 }
