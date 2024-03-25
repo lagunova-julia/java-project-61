@@ -51,7 +51,7 @@ public class Engine {
             } else {
                 System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n" +
                         "Let's try again, " + Cli.name + "!");
-                break;
+                System.exit(0);
             }
         }
         while (count < 3);
