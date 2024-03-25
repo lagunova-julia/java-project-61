@@ -18,6 +18,9 @@ public class App {
         gameNumber = sc.nextInt();
         if (gameNumber == 0 || gameNumber > 6) {
             System.exit(0);
+        } else if (gameNumber == 1) {
+            Cli.greetings();
+            System.exit(0);
         } else {
             System.out.println("Welcome to the Brain Games!");
             Cli.greetings();
