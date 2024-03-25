@@ -5,9 +5,9 @@ public class Prime {
     private static String question2;
     private static String correctAnswer;
     public Prime(String question1, String question2, String correctAnswer) {
-        Prime.question1 = question1;
-        Prime.question2 = question2;
-        Prime.correctAnswer = correctAnswer;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
     }
     public static String getQuestion1() {
         return question1;

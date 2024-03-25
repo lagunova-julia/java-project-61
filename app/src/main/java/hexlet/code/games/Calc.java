@@ -5,9 +5,9 @@ public class Calc {
     private static String question2;
     private static String correctAnswer;
     public Calc(String question1, String question2, String correctAnswer) {
-        Calc.question1 = question1;
-        Calc.question2 = question2;
-        Calc.correctAnswer = correctAnswer;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
     }
     public static String getQuestion1() {
         return question1;

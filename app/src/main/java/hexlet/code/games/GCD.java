@@ -5,9 +5,9 @@ public class GCD {
     private static String question2;
     private static String correctAnswer;
     public GCD(String question1, String question2, String correctAnswer) {
-        GCD.question1 = question1;
-        GCD.question2 = question2;
-        GCD.correctAnswer = correctAnswer;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
     }
     public static String getQuestion1() {
         return question1;

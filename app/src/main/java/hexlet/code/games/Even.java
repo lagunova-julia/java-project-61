@@ -5,9 +5,9 @@ public class Even {
     private static String question2;
     private static String correctAnswer;
     public Even(String question1, String question2, String correctAnswer) {
-        Even.question1 = question1;
-        Even.question2 = question2;
-        Even.correctAnswer = correctAnswer;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
     }
     public static String getQuestion1() {
         return question1;

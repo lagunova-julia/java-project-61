@@ -7,9 +7,9 @@ public class Progression {
     private static String question2;
     private static String correctAnswer;
     public Progression(String question1, String question2, String correctAnswer) {
-        Progression.question1 = question1;
-        Progression.question2 = question2;
-        Progression.correctAnswer = correctAnswer;
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
     }
     public static String getQuestion1() {
         return question1;

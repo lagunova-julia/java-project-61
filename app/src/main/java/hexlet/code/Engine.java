@@ -3,9 +3,23 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
-    static String question1;
-    static String question2;
-    static String correctAnswer;
+    private static String question1;
+    private static String question2;
+    private static String correctAnswer;
+    public Engine(String question1, String question2, String correctAnswer) {
+        this.question1 = question1;
+        this.question2 = question2;
+        this.correctAnswer = correctAnswer;
+    }
+    public static String getQuestion1() {
+        return question1;
+    }
+    public static String getQuestion2() {
+        return question2;
+    }
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
 
     public static void prepareGame() {
         if (App.getGameNumber() == 2) {
