@@ -1,9 +1,5 @@
 package hexlet.code;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-
+import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
@@ -39,6 +35,11 @@ public class Engine {
             Progression.fourthGame();
             question2 = Progression.question2;
             correctAnswer = Progression.correctAnswer;
+        } else if (App.gameNumber == 6) {
+            question1 = Prime.question1;
+            Prime.fifthGame();
+            question2 = Prime.question2;
+            correctAnswer = Prime.correctAnswer;
         }
     }
 
