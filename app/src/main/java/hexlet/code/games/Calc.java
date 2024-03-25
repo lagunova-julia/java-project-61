@@ -21,11 +21,13 @@ public class Calc {
     public static void secondGame() {
         char sign = 0;
         // создаются числа
-        int number = (int) (Math.random() * 100);
-        int number2 = (int) (Math.random() * 100);
+        int numbersCount = 100;
+        int number = (int) (Math.random() * numbersCount);
+        int number2 = (int) (Math.random() * numbersCount);
 
         // выбор знака
-        int signNumber = (int) (Math.random() * 3);
+        int signCount = 3;
+        int signNumber = (int) (Math.random() * signCount);
         if (signNumber == 0) {
             sign = '+';
             correctAnswer = String.valueOf(number + number2);

@@ -22,14 +22,18 @@ public class Progression {
     }
     public static void fourthGame() {
         // создаются числа: An+1 = An + d
-        int a = (int) (Math.random() * 100);
-        int d = (int) (Math.random() * 10);
+        int numbersCount = 100;
+        int progStep = 10;
+        int minNumbers = 5;
+        int maxNumbers = 10;
+        int a = (int) (Math.random() * numbersCount);
+        int d = (int) (Math.random() * progStep);
         if (d == 0) {
             while (d == 0) {
-                d = (int) (Math.random() * 10);
+                d = (int) (Math.random() * progStep);
             }
         }
-        int n = (int) (Math.random() * 10) + 5;
+        int n = (int) (Math.random() * maxNumbers) + minNumbers;
         int answerPlace = (int) (Math.random() * n);
         // составление прогрессии
         int[] progression = new int[n];

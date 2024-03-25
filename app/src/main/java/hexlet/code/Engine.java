@@ -1,5 +1,11 @@
 package hexlet.code;
-import hexlet.code.games.*;
+
+import hexlet.code.games.Even;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -22,27 +28,32 @@ public class Engine {
     }
 
     public static void prepareGame() {
-        if (App.getGameNumber() == 2) {
+        int firstGame = 2;
+        int secondGame = 3;
+        int thirdGame = 4;
+        int fourthGame = 5;
+        int fifthGame = 6;
+        if (App.getGameNumber() == firstGame) {
             question1 = Even.getQuestion1();
             Even.firstGame();
             question2 = Even.getQuestion2();
             correctAnswer = Even.getCorrectAnswer();
-        } else if (App.getGameNumber() == 3) {
+        } else if (App.getGameNumber() == secondGame) {
             question1 = Calc.getQuestion1();
             Calc.secondGame();
             question2 = Calc.getQuestion2();
             correctAnswer = Calc.getCorrectAnswer();
-        } else if (App.getGameNumber() == 4) {
+        } else if (App.getGameNumber() == thirdGame) {
             question1 = GCD.getQuestion1();
             GCD.thirdGame();
             question2 = GCD.getQuestion2();
             correctAnswer = GCD.getCorrectAnswer();
-        } else if (App.getGameNumber() == 5) {
+        } else if (App.getGameNumber() == fourthGame) {
             question1 = Progression.getQuestion1();
             Progression.fourthGame();
             question2 = Progression.getQuestion2();
             correctAnswer = Progression.getCorrectAnswer();
-        } else if (App.getGameNumber() == 6) {
+        } else if (App.getGameNumber() == fifthGame) {
             question1 = Prime.getQuestion1();
             Prime.fifthGame();
             question2 = Prime.getQuestion2();
@@ -53,6 +64,7 @@ public class Engine {
     public static void playGame() {
         System.out.println(question1);
         int count = 0;
+        int trueCount = 3;
         do {
             System.out.print("Question: " + question2 + "\nYour answer: ");
             Scanner sc = new Scanner(System.in);
@@ -63,14 +75,16 @@ public class Engine {
                 count++;
                 prepareGame();
             } else {
-                System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n" +
+                System.out.println("'" + playerAnswer
+                        + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer + "'.\n" +
                         "Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
         }
-        while (count < 3);
+        while (count < trueCount);
 
-        if (count == 3) {
+        if (count == trueCount) {
             System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }

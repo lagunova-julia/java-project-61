@@ -19,8 +19,9 @@ public class GCD {
         return correctAnswer;
     }
     public static void thirdGame() {
-        int number = (int) (Math.random() * 100);
-        int number2 = (int) (Math.random() * 100);
+        int numbersCount = 100;
+        int number = (int) (Math.random() * numbersCount);
+        int number2 = (int) (Math.random() * numbersCount);
         question2 = number + " " + number2;
         if (number == number2) {
             correctAnswer = String.valueOf(number);

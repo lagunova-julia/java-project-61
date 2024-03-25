@@ -19,7 +19,8 @@ public class Prime {
         return correctAnswer;
     }
     public static void fifthGame() {
-        int number = (int) (Math.random() * 100);
+        int numbersCount = 100;
+        int number = (int) (Math.random() * numbersCount);
         if (number == 0 || number == 1) {
             correctAnswer = "no";
         }

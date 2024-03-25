@@ -20,7 +20,8 @@ public class Even {
     }
     public static void firstGame() {
         // пишется условие игры
-        int number = (int) (Math.random() * 100);
+        int numbersCount = 100;
+        int number = (int) (Math.random() * numbersCount);
         question2 = String.valueOf(number);
         correctAnswer = ((number % 2) == 0) ? "yes" : "no";
     }
