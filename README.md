@@ -11,3 +11,6 @@ Game 'Calc'
 
 Game 'GCD'
 <a href="https://asciinema.org/a/O4HMBioqZqAZZDNvWhgnzwRFz" target="_blank"><img src="https://asciinema.org/a/O4HMBioqZqAZZDNvWhgnzwRFz.svg" /></a>
+
+Game 'Progression'
+<a href="https://asciinema.org/a/yjfwiR0uWorHlmJwlUOVPISGs" target="_blank"><img src="https://asciinema.org/a/yjfwiR0uWorHlmJwlUOVPISGs.svg" /></a>
