@@ -5,17 +5,12 @@ public class Calc {
     public static String question2;
     public static String correctAnswer;
     public static void secondGame() {
-        /* в этой игре создаются 2 числа
-           выбирается знак рандомно + - *
-           составляется выражение-вопрос
-           вычисляется это выражение
-         */
         char sign = 0;
         // создаются числа
         int number = (int) (Math.random() * 100);
         int number2 = (int) (Math.random() * 100);
 
-        // выбор знака, он выбирается именно ЗДЕСЬ
+        // выбор знака
         int signNumber = (int) (Math.random() * 3);
         if (signNumber == 0) {
             sign = '+';
@@ -27,7 +22,7 @@ public class Calc {
             sign = '*';
             correctAnswer = String.valueOf(number * number2);
         }
-        // составляем выражение вопрос, тоже составляется ЗДЕСЬ
-        question2 = String.valueOf(number) + sign + String.valueOf(number2);
+        // составляем выражение вопрос
+        question2 = String.valueOf(number) + sign + number2;
     }
 }

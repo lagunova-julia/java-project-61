@@ -5,15 +5,11 @@ public class Prime {
     public static String question2;
     public static String correctAnswer;
     public static void fifthGame() {
-        /* в этой игре создается число
-           проверяется на деление
-         */
         // создается число
         int number = (int) (Math.random() * 100);
         if (number == 0 || number == 1) {
             correctAnswer = "no";
         }
-
         // проверяется на деление
         for (int i = 2; i < (number / 2 + 1); i++) {
             if (number % i == 0) {
@@ -23,8 +19,7 @@ public class Prime {
                 correctAnswer = "yes";
             }
         }
-
-        // составляем выражение вопрос, тоже составляется ЗДЕСЬ
+        // составляем выражение вопрос
         question2 = String.valueOf(number);
     }
 }

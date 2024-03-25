@@ -5,16 +5,8 @@ public class GCD {
     public static String question2;
     public static String correctAnswer;
     public static void thirdGame() {
-        /* в этой игре создаются 2 числа
-           составляется выражение-вопрос
-           вычисляется наибольший общий делитель этих чисел
-         */
-
-        // создаются числа
         int number = (int) (Math.random() * 100);
         int number2 = (int) (Math.random() * 100);
-
-        // составляем выражение вопрос
         question2 = number + " " + number2;
 
         if (number == number2) {
@@ -32,7 +24,6 @@ public class GCD {
                 divindend = number2;
                 divisor = number;
             }
-
             do {
                 modulo = divindend % divisor;
                 correctAnswer = String.valueOf(divisor);
@@ -40,7 +31,6 @@ public class GCD {
                 divisor = modulo;
             }
             while (modulo != 0);
-
         }
     }
 }

@@ -3,18 +3,12 @@ import hexlet.code.games.*;
 import java.util.Scanner;
 
 public class Engine {
-
-    /* сначала создаем переменные класса
-       потом заполняем их в зависимости от выбранной игры
-       и дальше вызываем тот метод, класс которого соответствует выбранной игре
-    */
     static String question1;
     static String question2;
     static String correctAnswer;
 
     public static void prepareGame() {
-        /* здесь заполнение полей класса для выбранной игры
-           происходит 1 раз, видимо поэтому вопросы дублируются 3 раза */
+        /* здесь заполнение полей класса для выбранной игры */
         if (App.gameNumber == 2) {
             question1 = Even.question1;
             Even.firstGame();
@@ -44,7 +38,6 @@ public class Engine {
     }
 
     public static void playGame() {
-        /* здесь думаю будет сам игровой движок */
         System.out.println(question1);
         int count = 0;
         do {
