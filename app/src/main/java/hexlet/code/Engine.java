@@ -8,31 +8,31 @@ public class Engine {
     static String correctAnswer;
 
     public static void prepareGame() {
-        if (App.gameNumber == 2) {
-            question1 = Even.question1;
+        if (App.getGameNumber() == 2) {
+            question1 = Even.getQuestion1();
             Even.firstGame();
-            question2 = Even.question2;
-            correctAnswer = Even.correctAnswer;
-        } else if (App.gameNumber == 3) {
-            question1 = Calc.question1;
+            question2 = Even.getQuestion2();
+            correctAnswer = Even.getCorrectAnswer();
+        } else if (App.getGameNumber() == 3) {
+            question1 = Calc.getQuestion1();
             Calc.secondGame();
-            question2 = Calc.question2;
-            correctAnswer = Calc.correctAnswer;
-        } else if (App.gameNumber == 4) {
-            question1 = GCD.question1;
+            question2 = Calc.getQuestion2();
+            correctAnswer = Calc.getCorrectAnswer();
+        } else if (App.getGameNumber() == 4) {
+            question1 = GCD.getQuestion1();
             GCD.thirdGame();
-            question2 = GCD.question2;
-            correctAnswer = GCD.correctAnswer;
-        } else if (App.gameNumber == 5) {
-            question1 = Progression.question1;
+            question2 = GCD.getQuestion2();
+            correctAnswer = GCD.getCorrectAnswer();
+        } else if (App.getGameNumber() == 5) {
+            question1 = Progression.getQuestion1();
             Progression.fourthGame();
-            question2 = Progression.question2;
-            correctAnswer = Progression.correctAnswer;
-        } else if (App.gameNumber == 6) {
-            question1 = Prime.question1;
+            question2 = Progression.getQuestion2();
+            correctAnswer = Progression.getCorrectAnswer();
+        } else if (App.getGameNumber() == 6) {
+            question1 = Prime.getQuestion1();
             Prime.fifthGame();
-            question2 = Prime.question2;
-            correctAnswer = Prime.correctAnswer;
+            question2 = Prime.getQuestion2();
+            correctAnswer = Prime.getCorrectAnswer();
         }
     }
 
@@ -50,14 +50,14 @@ public class Engine {
                 prepareGame();
             } else {
                 System.out.println("'" + playerAnswer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.\n" +
-                        "Let's try again, " + Cli.name + "!");
+                        "Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }
         }
         while (count < 3);
 
         if (count == 3) {
-            System.out.println("Congratulations, " + Cli.name + "!");
+            System.out.println("Congratulations, " + Cli.getName() + "!");
         }
     }
 }

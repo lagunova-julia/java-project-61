@@ -3,9 +3,23 @@ package hexlet.code.games;
 import java.util.Arrays;
 
 public class Progression {
-    public static String question1 = "What number is missing in the progression?";
-    public static String question2;
-    public static String correctAnswer;
+    private static String question1 = "What number is missing in the progression?";
+    private static String question2;
+    private static String correctAnswer;
+    public Progression(String question1, String question2, String correctAnswer) {
+        Progression.question1 = question1;
+        Progression.question2 = question2;
+        Progression.correctAnswer = correctAnswer;
+    }
+    public static String getQuestion1() {
+        return question1;
+    }
+    public static String getQuestion2() {
+        return question2;
+    }
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
     public static void fourthGame() {
         // создаются числа: An+1 = An + d
         int a = (int) (Math.random() * 100);

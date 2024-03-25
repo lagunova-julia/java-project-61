@@ -1,9 +1,23 @@
 package hexlet.code.games;
 
 public class Prime {
-    public static String question1 = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static String question2;
-    public static String correctAnswer;
+    private static String question1 = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static String question2;
+    private static String correctAnswer;
+    public Prime(String question1, String question2, String correctAnswer) {
+        Prime.question1 = question1;
+        Prime.question2 = question2;
+        Prime.correctAnswer = correctAnswer;
+    }
+    public static String getQuestion1() {
+        return question1;
+    }
+    public static String getQuestion2() {
+        return question2;
+    }
+    public static String getCorrectAnswer() {
+        return correctAnswer;
+    }
     public static void fifthGame() {
         int number = (int) (Math.random() * 100);
         if (number == 0 || number == 1) {

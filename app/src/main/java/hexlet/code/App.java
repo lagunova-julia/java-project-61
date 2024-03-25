@@ -1,9 +1,14 @@
 package hexlet.code;
-
 import java.util.Scanner;
 
 public class App {
-    static int gameNumber;
+    private static int gameNumber;
+    public App (int gameNumber) {
+        App.gameNumber = gameNumber;
+    }
+    public static int getGameNumber() {
+        return gameNumber;
+    }
     public static void main(String[] args) {
         System.out.print("Please enter the game number and press Enter.\n" +
                 "1 - Greet\n" +
