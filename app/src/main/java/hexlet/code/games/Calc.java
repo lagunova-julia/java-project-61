@@ -23,6 +23,6 @@ public class Calc {
             correctAnswer = String.valueOf(number * number2);
         }
         // составляем выражение вопрос
-        question2 = String.valueOf(number) + sign + number2;
+        question2 = number + " " + sign + " " + number2;
     }
 }
