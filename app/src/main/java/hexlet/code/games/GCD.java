@@ -8,7 +8,6 @@ public class GCD {
         int number = (int) (Math.random() * 100);
         int number2 = (int) (Math.random() * 100);
         question2 = number + " " + number2;
-
         if (number == number2) {
             correctAnswer = String.valueOf(number);
         } else if (number == 0 || number2 == 0) {

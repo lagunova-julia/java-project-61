@@ -8,7 +8,6 @@ public class Engine {
     static String correctAnswer;
 
     public static void prepareGame() {
-        /* здесь заполнение полей класса для выбранной игры */
         if (App.gameNumber == 2) {
             question1 = Even.question1;
             Even.firstGame();
@@ -41,14 +40,10 @@ public class Engine {
         System.out.println(question1);
         int count = 0;
         do {
-            //началась игра, вопрос:
             System.out.print("Question: " + question2 + "\nYour answer: ");
-
-            // ввод ответа игрока
             Scanner sc = new Scanner(System.in);
             String playerAnswer = sc.nextLine();
 
-            // проверяется ввод ответа игрока
             if (correctAnswer.equals(playerAnswer)) {
                 System.out.println("Correct!");
                 count++;
