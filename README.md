@@ -14,3 +14,6 @@ Game 'GCD'
 
 Game 'Progression'
 <a href="https://asciinema.org/a/yjfwiR0uWorHlmJwlUOVPISGs" target="_blank"><img src="https://asciinema.org/a/yjfwiR0uWorHlmJwlUOVPISGs.svg" /></a>
+
+Game 'Prime'
+<a href="https://asciinema.org/a/ICQwqEPwp5Z6aiE0FkAopP02W" target="_blank"><img src="https://asciinema.org/a/ICQwqEPwp5Z6aiE0FkAopP02W.svg" /></a>
