@@ -17,6 +17,7 @@ public class Prime {
                 correctAnswer = "yes";
             }
         }
+        // составляем выражение вопрос
         question2 = String.valueOf(number);
     }
 }

@@ -16,7 +16,9 @@ public class App {
                 "Your choice: ");
         Scanner sc = new Scanner(System.in);
         gameNumber = sc.nextInt();
-        if (gameNumber != 0) {
+        if (gameNumber == 0 || gameNumber > 6) {
+            System.exit(0);
+        } else {
             System.out.println("Welcome to the Brain Games!");
             Cli.greetings();
         }
