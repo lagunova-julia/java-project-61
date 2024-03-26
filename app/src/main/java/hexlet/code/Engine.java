@@ -77,7 +77,8 @@ public class Engine {
             } else {
                 System.out.println("'" + playerAnswer
                         + "' is wrong answer ;(. Correct answer was '"
-                        + correctAnswer + "'.\n" +
+                        + correctAnswer
+                        + "'.\n" +
                         "Let's try again, " + Cli.getName() + "!");
                 System.exit(0);
             }

@@ -4,6 +4,7 @@ public class Calc {
     private static String question1 = "What is the result of the expression?";
     private static String question2;
     private static String correctAnswer;
+    public static final int numbersCount = 100;
     public Calc(String question1, String question2, String correctAnswer) {
         this.question1 = question1;
         this.question2 = question2;
@@ -18,10 +19,15 @@ public class Calc {
     public static String getCorrectAnswer() {
         return correctAnswer;
     }
+    public static void setQuestion2(String question2) {
+        Calc.question2 = question2;
+    }
+    public static void setCorrectAnswer(String correctAnswer) {
+        Calc.correctAnswer = correctAnswer;
+    }
     public static void secondGame() {
         char sign = 0;
         // создаются числа
-        int numbersCount = 100;
         int number = (int) (Math.random() * numbersCount);
         int number2 = (int) (Math.random() * numbersCount);
 
@@ -30,15 +36,19 @@ public class Calc {
         int signNumber = (int) (Math.random() * signCount);
         if (signNumber == 0) {
             sign = '+';
-            correctAnswer = String.valueOf(number + number2);
+            String temp = String.valueOf(number + number2);
+            setCorrectAnswer(temp);
         } else if (signNumber == 1) {
             sign = '-';
-            correctAnswer = String.valueOf(number - number2);
+            String temp = String.valueOf(number - number2);
+            setCorrectAnswer(temp);
         } else {
             sign = '*';
-            correctAnswer = String.valueOf(number * number2);
+            String temp = String.valueOf(number * number2);
+            setCorrectAnswer(temp);
         }
         // составляем выражение вопрос
-        question2 = number + " " + sign + " " + number2;
+        String temp = number + " " + sign + " " + number2;
+        setQuestion2(temp);
     }
 }

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class App {
     private static int gameNumber;
-    public App (int gameNumber) {
+    public App(int gameNumber) {
         this.gameNumber = gameNumber;
     }
     public static int getGameNumber() {
