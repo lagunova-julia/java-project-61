@@ -19,8 +19,10 @@ public class GCD {
 
         if (number == number2) {
             roundAnswer = String.valueOf(number);
-        } else if (number == 0 || number2 == 0) {
-            roundAnswer = String.valueOf(0);
+        } else if (number == 0) {
+            roundAnswer = String.valueOf(number2);
+        } else if (number2 == 0) {
+            roundAnswer = String.valueOf(number);
         } else {
             int divindend = 0;
             int divisor = 0;
