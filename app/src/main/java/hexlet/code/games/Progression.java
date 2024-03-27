@@ -1,39 +1,32 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Arrays;
 
 public class Progression {
-    private static String question1 = "What number is missing in the progression?";
-    private static String question2;
-    private static String correctAnswer;
-    public Progression(String question1, String question2, String correctAnswer) {
-        this.question1 = question1;
-        this.question2 = question2;
-        this.correctAnswer = correctAnswer;
+    public static final int NUMBERS_COUNT = 100;
+    public static final int PROGRAMME_STEP = 10;
+    public static final int MIN_NUMBERS = 5;
+    public static final int MAX_NUMBERS = 10;
+    public static final int ROUNDS_COUNT = 3;
+    public static final int SAVE_DATA = 2;
+
+    private static String makeAnswer(int answer) {
+        // дописать ответ
+        return String.valueOf(answer);
     }
-    public static String getQuestion1() {
-        return question1;
-    }
-    public static String getQuestion2() {
-        return question2;
-    }
-    public static String getCorrectAnswer() {
-        return correctAnswer;
-    }
-    public static void fourthGame() {
+
+    private static String[] generateRoundData() {
         // создаются числа: An+1 = An + d
-        int numbersCount = 100;
-        int progStep = 10;
-        int minNumbers = 5;
-        int maxNumbers = 10;
-        int a = (int) (Math.random() * numbersCount);
-        int d = (int) (Math.random() * progStep);
+        int a = (int) (Math.random() * NUMBERS_COUNT);
+        int d = (int) (Math.random() * PROGRAMME_STEP);
         if (d == 0) {
             while (d == 0) {
-                d = (int) (Math.random() * progStep);
+                d = (int) (Math.random() * PROGRAMME_STEP);
             }
         }
-        int n = (int) (Math.random() * maxNumbers) + minNumbers;
+        int n = (int) (Math.random() * MAX_NUMBERS) + MIN_NUMBERS;
         int answerPlace = (int) (Math.random() * n);
         // составление прогрессии
         int[] progression = new int[n];
@@ -42,7 +35,7 @@ public class Progression {
             progression[i] = progression[i - 1] + d;
         }
         // сохраняем искомое значение в переменнную
-        correctAnswer = String.valueOf(progression[answerPlace]);
+        String answer = makeAnswer(progression[answerPlace]);
         // int[] to String[]
         String[] newProgression = new String[n];
         for (int i = 0; i < newProgression.length; i++) {
@@ -52,6 +45,18 @@ public class Progression {
         newProgression[answerPlace] = "..";
         // составляем выражение вопрос
         var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
-        question2 = tempStr.trim();
+        var question = tempStr.trim();
+
+        return new String[]{question, answer};
+    }
+
+    public static void makeGame() {
+        String question = "What number is missing in the progression?";
+        String[][] roundsData = new String[ROUNDS_COUNT][SAVE_DATA];
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
+
     }
 }

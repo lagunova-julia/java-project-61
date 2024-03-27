@@ -1,32 +1,22 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class GCD {
-    private static String question1 = "Find the greatest common divisor of given numbers.";
-    private static String question2;
-    private static String correctAnswer;
-    public GCD(String question1, String question2, String correctAnswer) {
-        this.question1 = question1;
-        this.question2 = question2;
-        this.correctAnswer = correctAnswer;
-    }
-    public static String getQuestion1() {
-        return question1;
-    }
-    public static String getQuestion2() {
-        return question2;
-    }
-    public static String getCorrectAnswer() {
-        return correctAnswer;
-    }
-    public static void thirdGame() {
-        int numbersCount = 100;
-        int number = (int) (Math.random() * numbersCount);
-        int number2 = (int) (Math.random() * numbersCount);
-        question2 = number + " " + number2;
+    public static final int NUMBERS_COUNT = 100;
+    public static final int ROUNDS_COUNT = 3;
+    public static final int SAVE_DATA = 2;
+
+    private static String[] generateRoundData() {
+        int number = (int) (Math.random() * NUMBERS_COUNT);
+        int number2 = (int) (Math.random() * NUMBERS_COUNT);
+        String question = number + " " + number2;
+        String answer = "";
+
         if (number == number2) {
-            correctAnswer = String.valueOf(number);
+            answer = String.valueOf(number);
         } else if (number == 0 || number2 == 0) {
-            correctAnswer = String.valueOf(0);
+            answer = String.valueOf(0);
         } else {
             int divindend = 0;
             int divisor = 0;
@@ -34,17 +24,28 @@ public class GCD {
             if (number > number2) {
                 divindend = number;
                 divisor = number2;
-            } else if (number < number2) {
+            } else {
                 divindend = number2;
                 divisor = number;
             }
             do {
                 modulo = divindend % divisor;
-                correctAnswer = String.valueOf(divisor);
+                answer = String.valueOf(divisor);
                 divindend = divisor;
                 divisor = modulo;
             }
             while (modulo != 0);
         }
+        return new String[]{question, answer};
+    }
+
+    public static void makeGame() {
+        String question = "Find the greatest common divisor of given numbers.";
+        String[][] roundsData = new String[ROUNDS_COUNT][SAVE_DATA];
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
+
     }
 }

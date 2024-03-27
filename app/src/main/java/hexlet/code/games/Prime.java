@@ -1,38 +1,39 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Prime {
-    private static String question1 = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static String question2;
-    private static String correctAnswer;
-    public Prime(String question1, String question2, String correctAnswer) {
-        this.question1 = question1;
-        this.question2 = question2;
-        this.correctAnswer = correctAnswer;
-    }
-    public static String getQuestion1() {
-        return question1;
-    }
-    public static String getQuestion2() {
-        return question2;
-    }
-    public static String getCorrectAnswer() {
-        return correctAnswer;
-    }
-    public static void fifthGame() {
-        int numbersCount = 100;
-        int number = (int) (Math.random() * numbersCount);
+    public static final int NUMBERS_COUNT = 100;
+    public static final int ROUNDS_COUNT = 3;
+    public static final int SAVE_DATA = 2;
+
+    private static String[] generateRoundData() {
+        int number = (int) (Math.random() * NUMBERS_COUNT);
+        String answer = "";
+
         if (number == 0 || number == 1) {
-            correctAnswer = "no";
-        }
-        for (int i = 2; i < (number / 2 + 1); i++) {
-            if (number % i == 0) {
-                correctAnswer = "no";
-                break;
-            } else {
-                correctAnswer = "yes";
+            answer = "no";
+        } else {
+            for (int i = 2; i < (number / 2 + 1); i++) {
+                if (number % i == 0) {
+                    answer = "no";
+                    break;
+                } else {
+                    answer = "yes";
+                }
             }
         }
-        // составляем выражение вопрос
-        question2 = String.valueOf(number);
+        String question = String.valueOf(number);
+        return new String[]{question, answer};
+    }
+
+    public static void makeGame() {
+        String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[][] roundsData = new String[ROUNDS_COUNT][SAVE_DATA];
+        for (int i = 0; i < ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
+
     }
 }

@@ -2,13 +2,17 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    private static int gameNumber;
-    public App(int gameNumber) {
-        this.gameNumber = gameNumber;
+    static int gameNumber;
+    static String userName;
+
+    public static String getUserName() {
+        return userName;
     }
-    public static int getGameNumber() {
-        return gameNumber;
+
+    public static String getGameNumber() {
+        return String.valueOf(gameNumber);
     }
+
     public static void main(String[] args) {
         System.out.print("Please enter the game number and press Enter.\n"
                 + "1 - Greet\n"
@@ -25,12 +29,12 @@ public class App {
             System.exit(0);
         } else {
             System.out.println("Welcome to the Brain Games!");
-            Cli.greetings();
+            userName = Cli.greetings();
+            System.out.println("Hello, " + userName + "!");
             if (gameNumber == 1) {
                 System.exit(0);
             }
         }
         Engine.prepareGame();
-        Engine.playGame();
     }
 }
