@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS_COUNT = 3;
+    public static final int SAVE_DATA = 2;
     public static final int GAME_EVEN = 2;
     public static final int GAME_CALC = 3;
     public static final int GAME_GCD = 4;
@@ -18,17 +19,35 @@ public class Engine {
 
     public static void prepareGame() {
         int gameNumber = Integer.parseInt(App.getGameNumber());
+        String mainQuestion = "";
+        String[][] roundsData = new String[ROUNDS_COUNT][SAVE_DATA];
         if (gameNumber == GAME_EVEN) {
-            Even.makeGame();
+            mainQuestion = Even.mainQuestion();
+            for (int i = 0; i < ROUNDS_COUNT; i++) {
+                roundsData[i] = Even.generateRoundData();
+            }
         } else if (gameNumber == GAME_CALC) {
-            Calc.makeGame();
+            mainQuestion = Calc.mainQuestion();
+            for (int i = 0; i < ROUNDS_COUNT; i++) {
+                roundsData[i] = Calc.generateRoundData();
+            }
         } else if (gameNumber == GAME_GCD) {
-            GCD.makeGame();
+            mainQuestion = GCD.mainQuestion();
+            for (int i = 0; i < ROUNDS_COUNT; i++) {
+                roundsData[i] = GCD.generateRoundData();
+            }
         } else if (gameNumber == GAME_PROGRESSION) {
-            Progression.makeGame();
+            mainQuestion = Progression.mainQuestion();
+            for (int i = 0; i < ROUNDS_COUNT; i++) {
+                roundsData[i] = Progression.generateRoundData();
+            }
         } else if (gameNumber == GAME_PRIME) {
-            Prime.makeGame();
+            mainQuestion = Prime.mainQuestion();
+            for (int i = 0; i < ROUNDS_COUNT; i++) {
+                roundsData[i] = Prime.generateRoundData();
+            }
         }
+        playGame(mainQuestion, roundsData);
     }
 
     public static void playGame(String question, String[][] gameData) {

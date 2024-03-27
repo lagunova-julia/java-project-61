@@ -1,17 +1,14 @@
 package hexlet.code.games;
-import hexlet.code.Engine;
 
 public class Calc {
     public static final int NUMBERS_COUNT = 100;
     public static final int SIGNS_COUNT = 3;
-    public static final int ROUNDS_COUNT = 3;
-    public static final int SAVE_DATA = 2;
     private static String makeAnswer(int answer) {
         // дописать ответ
         return String.valueOf(answer);
     }
 
-    private static String[] generateRoundData() {
+    public static String[] generateRoundData() {
         char sign = 0;
         // создаются числа
         int number = (int) (Math.random() * NUMBERS_COUNT);
@@ -39,13 +36,7 @@ public class Calc {
         return new String[]{question, answer};
     }
 
-    public static void makeGame() {
-        String question = "What is the result of the expression?";
-        String[][] roundsData = new String[ROUNDS_COUNT][SAVE_DATA];
-        for (int i = 0; i < ROUNDS_COUNT; i++) {
-            roundsData[i] = generateRoundData();
-        }
-        Engine.playGame(question, roundsData);
-
+    public static String mainQuestion() {
+        return "What is the result of the expression?";
     }
 }
