@@ -51,8 +51,8 @@ public class Engine {
                 System.out.println("'" + playerAnswer
                         + "' is wrong answer ;(. Correct answer was '"
                         + roundAnswer
-                        + "'.\n" +
-                        "Let's try again, " + userName + "!");
+                        + "'.\n"
+                        + "Let's try again, " + userName + "!");
                 System.exit(0);
             }
             i++;

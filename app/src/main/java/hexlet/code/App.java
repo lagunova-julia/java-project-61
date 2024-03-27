@@ -2,8 +2,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    static int gameNumber;
-    static String userName;
+    private static int gameNumber; // добавила модификатор
+    private static String userName; // добавила модификатор
+    public static final int GAME_OVER = 6;
 
     public static String getUserName() {
         return userName;
@@ -25,7 +26,7 @@ public class App {
                 + "Your choice: ");
         Scanner sc = new Scanner(System.in);
         gameNumber = sc.nextInt();
-        if (gameNumber == 0 || gameNumber > 6) {
+        if (gameNumber == 0 || gameNumber > GAME_OVER) {
             System.exit(0);
         } else {
             System.out.println("Welcome to the Brain Games!");
