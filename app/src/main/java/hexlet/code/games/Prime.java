@@ -2,25 +2,33 @@ package hexlet.code.games;
 
 public class Prime {
     public static final int NUMBERS_COUNT = 100;
+    private static String roundQuestion;
+    private static String roundAnswer;
+    public static String getRoundQuestion() {
+        return roundQuestion;
+    }
+    public static String getRoundAnswer() {
+        return roundAnswer;
+    }
 
-    public static String[] generateRoundData() {
+    public static void generateRoundData() {
         int number = (int) (Math.random() * NUMBERS_COUNT);
-        String answer = "";
+        //String answer = "";
 
         if (number == 0 || number == 1) {
-            answer = "no";
+            roundAnswer = "no";
         } else {
             for (int i = 2; i < (number / 2 + 1); i++) {
                 if (number % i == 0) {
-                    answer = "no";
+                    roundAnswer = "no";
                     break;
                 } else {
-                    answer = "yes";
+                    roundAnswer = "yes";
                 }
             }
         }
-        String question = String.valueOf(number);
-        return new String[]{question, answer};
+        roundQuestion = String.valueOf(number);
+        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

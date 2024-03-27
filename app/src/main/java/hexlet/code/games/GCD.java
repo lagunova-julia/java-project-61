@@ -2,17 +2,25 @@ package hexlet.code.games;
 
 public class GCD {
     public static final int NUMBERS_COUNT = 100;
+    private static String roundQuestion;
+    private static String roundAnswer;
+    public static String getRoundQuestion() {
+        return roundQuestion;
+    }
+    public static String getRoundAnswer() {
+        return roundAnswer;
+    }
 
-    public static String[] generateRoundData() {
+    public static void generateRoundData() {
         int number = (int) (Math.random() * NUMBERS_COUNT);
         int number2 = (int) (Math.random() * NUMBERS_COUNT);
-        String question = number + " " + number2;
-        String answer = "";
+        roundQuestion = number + " " + number2;
+        //String answer = "";
 
         if (number == number2) {
-            answer = String.valueOf(number);
+            roundAnswer = String.valueOf(number);
         } else if (number == 0 || number2 == 0) {
-            answer = String.valueOf(0);
+            roundAnswer = String.valueOf(0);
         } else {
             int divindend = 0;
             int divisor = 0;
@@ -26,13 +34,13 @@ public class GCD {
             }
             do {
                 modulo = divindend % divisor;
-                answer = String.valueOf(divisor);
+                roundAnswer = String.valueOf(divisor);
                 divindend = divisor;
                 divisor = modulo;
             }
             while (modulo != 0);
         }
-        return new String[]{question, answer};
+        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

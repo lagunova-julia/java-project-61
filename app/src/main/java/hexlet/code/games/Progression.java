@@ -6,12 +6,20 @@ public class Progression {
     public static final int PROGRAMME_STEP = 10;
     public static final int MIN_NUMBERS = 5;
     public static final int MAX_NUMBERS = 10;
-
-    private static String makeAnswer(int answer) {
-        return String.valueOf(answer);
+    private static String roundQuestion;
+    private static String roundAnswer;
+    public static String getRoundQuestion() {
+        return roundQuestion;
+    }
+    public static String getRoundAnswer() {
+        return roundAnswer;
     }
 
-    public static String[] generateRoundData() {
+    /*private static String makeAnswer(int answer) {
+        return String.valueOf(answer);
+    }*/
+
+    public static void generateRoundData() {
         // создаются числа: An+1 = An + d
         int a = (int) (Math.random() * NUMBERS_COUNT);
         int d = (int) (Math.random() * PROGRAMME_STEP);
@@ -29,7 +37,7 @@ public class Progression {
             progression[i] = progression[i - 1] + d;
         }
         // сохраняем искомое значение в переменнную
-        String answer = makeAnswer(progression[answerPlace]);
+        roundAnswer = String.valueOf(progression[answerPlace]);
         // int[] to String[]
         String[] newProgression = new String[n];
         for (int i = 0; i < newProgression.length; i++) {
@@ -39,9 +47,9 @@ public class Progression {
         newProgression[answerPlace] = "..";
         // составляем выражение вопрос
         var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
-        var question = tempStr.trim();
+        roundQuestion = tempStr.trim();
 
-        return new String[]{question, answer};
+        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

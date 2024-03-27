@@ -40,42 +40,47 @@ public class Engine {
         //String mainQuestion = "";
         if (gameNumber == GAME_EVEN) {
             mainQuestion = Even.mainQuestion();
-            String[] roundData = Even.generateRoundData(); // массив ответ-вопрос
-            roundQuestion = roundData[0];
-            roundAnswer = roundData[1];
+            Even.generateRoundData();
+            //String[] roundData = Even.generateRoundData(); // массив ответ-вопрос
+            roundQuestion = Even.getRoundQuestion();
+            roundAnswer = Even.getRoundAnswer();
             //fillRoundsData();
             /*for (int i = 0; i < ROUNDS_COUNT; i++) {
                 roundsData[i] = Even.generateRoundData();
             }*/
         } else if (gameNumber == GAME_CALC) {
             mainQuestion = Calc.mainQuestion();
-            String[] roundData = Calc.generateRoundData(); // массив ответ-вопрос
-            roundQuestion = roundData[0];
-            roundAnswer = roundData[1];
+            Calc.generateRoundData();
+            //String[] roundData = Calc.generateRoundData(); // массив ответ-вопрос
+            roundQuestion = Calc.getRoundQuestion();
+            roundAnswer = Calc.getRoundAnswer();
             /*for (int i = 0; i < ROUNDS_COUNT; i++) {
                 roundsData[i] = Calc.generateRoundData();
             }*/
         } else if (gameNumber == GAME_GCD) {
             mainQuestion = GCD.mainQuestion();
-            String[] roundData = GCD.generateRoundData(); // массив ответ-вопрос
-            roundQuestion = roundData[0];
-            roundAnswer = roundData[1];
+            GCD.generateRoundData();
+            //String[] roundData = GCD.generateRoundData(); // массив ответ-вопрос
+            roundQuestion = GCD.getRoundQuestion();
+            roundAnswer = GCD.getRoundAnswer();
             /*for (int i = 0; i < ROUNDS_COUNT; i++) {
                 roundsData[i] = GCD.generateRoundData();
             }*/
         } else if (gameNumber == GAME_PROGRESSION) {
             mainQuestion = Progression.mainQuestion();
-            String[] roundData = Progression.generateRoundData(); // массив ответ-вопрос
-            roundQuestion = roundData[0];
-            roundAnswer = roundData[1];
+            Progression.generateRoundData();
+            //String[] roundData = Progression.generateRoundData(); // массив ответ-вопрос
+            roundQuestion = Progression.getRoundQuestion();
+            roundAnswer = Progression.getRoundAnswer();
             /*for (int i = 0; i < ROUNDS_COUNT; i++) {
                 roundsData[i] = Progression.generateRoundData();
             }*/
         } else if (gameNumber == GAME_PRIME) {
             mainQuestion = Prime.mainQuestion();
-            String[] roundData = Prime.generateRoundData(); // массив ответ-вопрос
-            roundQuestion = roundData[0];
-            roundAnswer = roundData[1];
+            Prime.generateRoundData();
+            //String[] roundData = Prime.generateRoundData(); // массив ответ-вопрос
+            roundQuestion = Prime.getRoundQuestion();
+            roundAnswer = Prime.getRoundAnswer();
             /*for (int i = 0; i < ROUNDS_COUNT; i++) {
                 roundsData[i] = Prime.generateRoundData();
             }*/
