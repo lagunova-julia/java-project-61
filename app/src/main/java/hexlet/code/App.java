@@ -37,5 +37,6 @@ public class App {
             }
         }
         Engine.prepareGame();
+        Engine.playGame();
     }
 }
