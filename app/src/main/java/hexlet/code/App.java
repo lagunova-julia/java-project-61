@@ -2,8 +2,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class App {
-    private static int gameNumber; // добавила модификатор
-    private static String userName; // добавила модификатор
+    private static int gameNumber;
+    private static String userName;
     public static final int GAME_OVER = 6;
 
     public static String getUserName() {

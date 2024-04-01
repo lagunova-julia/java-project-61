@@ -15,7 +15,6 @@ public class GCD {
         int number = (int) (Math.random() * NUMBERS_COUNT);
         int number2 = (int) (Math.random() * NUMBERS_COUNT);
         roundQuestion = number + " " + number2;
-        //String answer = "";
 
         if (number == number2) {
             roundAnswer = String.valueOf(number);
@@ -42,7 +41,6 @@ public class GCD {
             }
             while (modulo != 0);
         }
-        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

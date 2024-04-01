@@ -15,7 +15,6 @@ public class Even {
         int number = (int) (Math.random() * NUMBERS_COUNT);
         roundAnswer = ((number % 2) == 0) ? "yes" : "no";
         roundQuestion = String.valueOf(number);
-        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

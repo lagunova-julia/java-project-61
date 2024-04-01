@@ -13,7 +13,6 @@ public class Prime {
 
     public static void generateRoundData() {
         int number = (int) (Math.random() * NUMBERS_COUNT);
-        //String answer = "";
 
         if (number == 0 || number == 1) {
             roundAnswer = "no";
@@ -28,7 +27,6 @@ public class Prime {
             }
         }
         roundQuestion = String.valueOf(number);
-        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

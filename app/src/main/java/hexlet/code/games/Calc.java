@@ -11,10 +11,6 @@ public class Calc {
     public static String getRoundAnswer() {
         return roundAnswer;
     }
-    /*private static String makeAnswer(int answer) {
-        // дописать ответ
-        return String.valueOf(answer);
-    }*/
     public static void generateRoundData() {
         char sign = 0;
         // создаются числа
@@ -23,7 +19,6 @@ public class Calc {
 
         // выбор знака
         int signNumber = (int) (Math.random() * SIGNS_COUNT);
-        //String answer = "";
         if (signNumber == 0) {
             sign = '+';
             int temp = number + number2;
@@ -39,8 +34,6 @@ public class Calc {
         }
         // составляем выражение вопрос
         roundQuestion = number + " " + sign + " " + number2;
-
-        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {

@@ -15,10 +15,6 @@ public class Progression {
         return roundAnswer;
     }
 
-    /*private static String makeAnswer(int answer) {
-        return String.valueOf(answer);
-    }*/
-
     public static void generateRoundData() {
         // создаются числа: An+1 = An + d
         int a = (int) (Math.random() * NUMBERS_COUNT);
@@ -48,8 +44,6 @@ public class Progression {
         // составляем выражение вопрос
         var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
         roundQuestion = tempStr.trim();
-
-        //return new String[]{question, answer};
     }
 
     public static String mainQuestion() {
