@@ -1,35 +1,34 @@
 package hexlet.code.games;
 
-public class Prime {
-    public static final int NUMBERS_COUNT = 100;
-    private static String roundQuestion;
-    private static String roundAnswer;
-    public static String getRoundQuestion() {
-        return roundQuestion;
-    }
-    public static String getRoundAnswer() {
-        return roundAnswer;
-    }
+import hexlet.code.Engine;
 
-    public static void generateRoundData() {
-        int number = (int) (Math.random() * NUMBERS_COUNT);
+public class Prime {
+    public static String[] generateRoundData() {
+        int number = (int) (Math.random() * Engine.NUMBERS_COUNT);
+        String answer = "";
 
         if (number == 0 || number == 1) {
-            roundAnswer = "no";
+            answer = "no";
         } else {
             for (int i = 2; i < (number / 2 + 1); i++) {
                 if (number % i == 0) {
-                    roundAnswer = "no";
+                    answer = "no";
                     break;
                 } else {
-                    roundAnswer = "yes";
+                    answer = "yes";
                 }
             }
         }
-        roundQuestion = String.valueOf(number);
+        String question = String.valueOf(number);
+        return new String[]{question, answer};
     }
 
-    public static String mainQuestion() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static void makeGame() {
+        String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[][] roundsData = new String[Engine.ROUNDS_COUNT][Engine.SAVE_DATA];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
     }
 }

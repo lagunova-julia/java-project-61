@@ -1,4 +1,11 @@
 package hexlet.code;
+
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 import java.util.Scanner;
 
 public class App {
@@ -10,8 +17,8 @@ public class App {
         return userName;
     }
 
-    public static String getGameNumber() {
-        return String.valueOf(gameNumber);
+    public static int getGameNumber() {
+        return gameNumber;
     }
 
     public static void main(String[] args) {
@@ -36,7 +43,28 @@ public class App {
                 System.exit(0);
             }
         }
-        Engine.prepareGame();
-        Engine.playGame();
+        chooseGame();
+    }
+
+    public static void chooseGame() {
+        int gameNumber = App.getGameNumber();
+
+        switch (gameNumber) {
+            case Engine.GAME_EVEN:
+                Even.makeGame();
+                break;
+            case Engine.GAME_CALC:
+                Calc.makeGame();
+                break;
+            case Engine.GAME_GCD:
+                GCD.makeGame();
+                break;
+            case Engine.GAME_PROGRESSION:
+                Progression.makeGame();
+                break;
+            case Engine.GAME_PRIME:
+                Prime.makeGame();
+                break;
+        }
     }
 }

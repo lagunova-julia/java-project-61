@@ -1,23 +1,20 @@
 package hexlet.code.games;
+
+import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
-    public static final int NUMBERS_COUNT = 100;
     public static final int PROGRAMME_STEP = 10;
     public static final int MIN_NUMBERS = 5;
     public static final int MAX_NUMBERS = 10;
-    private static String roundQuestion;
-    private static String roundAnswer;
-    public static String getRoundQuestion() {
-        return roundQuestion;
-    }
-    public static String getRoundAnswer() {
-        return roundAnswer;
+    private static String makeAnswer(int answer) {
+        // дописать ответ
+        return String.valueOf(answer);
     }
 
-    public static void generateRoundData() {
+    public static String[] generateRoundData() {
         // создаются числа: An+1 = An + d
-        int a = (int) (Math.random() * NUMBERS_COUNT);
+        int a = (int) (Math.random() * Engine.NUMBERS_COUNT);
         int d = (int) (Math.random() * PROGRAMME_STEP);
         if (d == 0) {
             while (d == 0) {
@@ -33,7 +30,7 @@ public class Progression {
             progression[i] = progression[i - 1] + d;
         }
         // сохраняем искомое значение в переменнную
-        roundAnswer = String.valueOf(progression[answerPlace]);
+        String answer = makeAnswer(progression[answerPlace]);
         // int[] to String[]
         String[] newProgression = new String[n];
         for (int i = 0; i < newProgression.length; i++) {
@@ -43,11 +40,17 @@ public class Progression {
         newProgression[answerPlace] = "..";
         // составляем выражение вопрос
         var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
-        roundQuestion = tempStr.trim();
+        var question = tempStr.trim();
+
+        return new String[]{question, answer};
     }
 
-    public static String mainQuestion() {
-        return "What number is missing in the progression?";
+    public static void makeGame() {
+        String question = "What number is missing in the progression?";
+        String[][] roundsData = new String[Engine.ROUNDS_COUNT][Engine.SAVE_DATA];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
     }
-
 }

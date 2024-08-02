@@ -1,27 +1,18 @@
 package hexlet.code.games;
 
-public class GCD {
-    public static final int NUMBERS_COUNT = 100;
-    private static String roundQuestion;
-    private static String roundAnswer;
-    public static String getRoundQuestion() {
-        return roundQuestion;
-    }
-    public static String getRoundAnswer() {
-        return roundAnswer;
-    }
+import hexlet.code.Engine;
 
-    public static void generateRoundData() {
-        int number = (int) (Math.random() * NUMBERS_COUNT);
-        int number2 = (int) (Math.random() * NUMBERS_COUNT);
-        roundQuestion = number + " " + number2;
+public class GCD {
+    public static String[] generateRoundData() {
+        int number = (int) (Math.random() * Engine.NUMBERS_COUNT);
+        int number2 = (int) (Math.random() * Engine.NUMBERS_COUNT);
+        String question = number + " " + number2;
+        String answer = "";
 
         if (number == number2) {
-            roundAnswer = String.valueOf(number);
-        } else if (number == 0) {
-            roundAnswer = String.valueOf(number2);
-        } else if (number2 == 0) {
-            roundAnswer = String.valueOf(number);
+            answer = String.valueOf(number);
+        } else if (number == 0 || number2 == 0) {
+            answer = String.valueOf(0);
         } else {
             int divindend = 0;
             int divisor = 0;
@@ -35,15 +26,22 @@ public class GCD {
             }
             do {
                 modulo = divindend % divisor;
-                roundAnswer = String.valueOf(divisor);
+                answer = String.valueOf(divisor);
                 divindend = divisor;
                 divisor = modulo;
             }
             while (modulo != 0);
         }
+        return new String[]{question, answer};
     }
 
-    public static String mainQuestion() {
-        return "Find the greatest common divisor of given numbers.";
+    public static void makeGame() {
+        String question = "Find the greatest common divisor of given numbers.";
+        String[][] roundsData = new String[Engine.ROUNDS_COUNT][Engine.SAVE_DATA];
+        for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            roundsData[i] = generateRoundData();
+        }
+        Engine.playGame(question, roundsData);
+
     }
 }
