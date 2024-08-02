@@ -12,13 +12,8 @@ public class App {
     private static int gameNumber;
     private static String userName;
     public static final int GAME_OVER = 6;
-
     public static String getUserName() {
         return userName;
-    }
-
-    public static int getGameNumber() {
-        return gameNumber;
     }
 
     public static void main(String[] args) {
@@ -47,8 +42,6 @@ public class App {
     }
 
     public static void chooseGame() {
-        int gameNumber = App.getGameNumber();
-
         switch (gameNumber) {
             case Engine.GAME_EVEN:
                 Even.makeGame();
@@ -64,6 +57,8 @@ public class App {
                 break;
             case Engine.GAME_PRIME:
                 Prime.makeGame();
+                break;
+            default:
                 break;
         }
     }
