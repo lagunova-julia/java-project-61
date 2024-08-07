@@ -15,10 +15,9 @@ public class Engine {
     public static void playGame(String question, String[][] gameData) {
 
         System.out.println(question);
-        int count = 0;
         int i = 0;
         String userName = App.getUserName();
-        do {
+        for (int count = 0; count < ROUNDS_COUNT; count++) {
             String roundQuestion = gameData[i][0];
             String roundAnswer = gameData[i][1];
             System.out.print("Question: " + roundQuestion + "\nYour answer: ");
@@ -27,18 +26,16 @@ public class Engine {
 
             if (roundAnswer.equals(playerAnswer)) {
                 System.out.println("Correct!");
-                count++;
+                i++;
             } else {
                 System.out.println("'" + playerAnswer
                         + "' is wrong answer ;(. Correct answer was '"
                         + roundAnswer
                         + "'.\n"
                         + "Let's try again, " + userName + "!");
-                System.exit(0);
+                return;
             }
-            i++;
         }
-        while (count < ROUNDS_COUNT);
         System.out.println("Congratulations, " + userName + "!");
     }
 }

@@ -1,38 +1,43 @@
 package hexlet.code.games;
+
 import hexlet.code.Engine;
+import java.util.Random;
 
 public class Calc {
     public static final int SIGNS_COUNT = 3;
     private static String makeAnswer(int answer) {
-        // дописать ответ
         return String.valueOf(answer);
     }
 
     public static String[] generateRoundData() {
         char sign = 0;
-        // создаются числа
-        int number = (int) (Math.random() * Engine.NUMBERS_COUNT);
-        int number2 = (int) (Math.random() * Engine.NUMBERS_COUNT);
+        Random r = new Random();
+        int number = r.nextInt(Engine.NUMBERS_COUNT + 1);
+        int number2 = r.nextInt(Engine.NUMBERS_COUNT + 1);
 
-        // выбор знака
-        int signNumber = (int) (Math.random() * SIGNS_COUNT);
+        int signNumber = r.nextInt(SIGNS_COUNT);
+        int temp = 0;
         String answer = "";
-        if (signNumber == 0) {
-            sign = '+';
-            int temp = number + number2;
-            answer = makeAnswer(temp);
-        } else if (signNumber == 1) {
-            sign = '-';
-            int temp = number - number2;
-            answer = makeAnswer(temp);
-        } else {
-            sign = '*';
-            int temp = number * number2;
-            answer = makeAnswer(temp);
+        switch (signNumber) {
+            case 0:
+                sign = '+';
+                temp = number + number2;
+                answer = makeAnswer(temp);
+                break;
+            case 1:
+                sign = '-';
+                temp = number - number2;
+                answer = makeAnswer(temp);
+                break;
+            case 2:
+                sign = '*';
+                temp = number * number2;
+                answer = makeAnswer(temp);
+                break;
+            default:
+                break;
         }
-        // составляем выражение вопрос
         String question = number + " " + sign + " " + number2;
-
         return new String[]{question, answer};
     }
 
@@ -43,6 +48,5 @@ public class Calc {
             roundsData[i] = generateRoundData();
         }
         Engine.playGame(question, roundsData);
-
     }
 }

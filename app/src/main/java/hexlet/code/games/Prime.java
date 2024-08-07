@@ -5,22 +5,22 @@ import hexlet.code.Engine;
 public class Prime {
     public static String[] generateRoundData() {
         int number = (int) (Math.random() * Engine.NUMBERS_COUNT);
-        String answer = "";
-
-        if (number == 0 || number == 1) {
-            answer = "no";
-        } else {
-            for (int i = 2; i < (number / 2 + 1); i++) {
-                if (number % i == 0) {
-                    answer = "no";
-                    break;
-                } else {
-                    answer = "yes";
-                }
-            }
-        }
+        String answer = isPrimeNumber(number) ? "yes" : "no";
         String question = String.valueOf(number);
         return new String[]{question, answer};
+    }
+    private static boolean isPrimeNumber(int number) {
+        if (number == 0 || number == 1) {
+            return false;
+        } else {
+            int sqrtNumber = (int) (Math.sqrt(number));
+            for (int i = 2; i < (sqrtNumber + 1); i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 
     public static void makeGame() {

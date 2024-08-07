@@ -1,11 +1,13 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import java.util.Random;
 
 public class GCD {
     public static String[] generateRoundData() {
-        int number = (int) (Math.random() * Engine.NUMBERS_COUNT);
-        int number2 = (int) (Math.random() * Engine.NUMBERS_COUNT);
+        Random r = new Random();
+        int number = r.nextInt(Engine.NUMBERS_COUNT + 1);
+        int number2 = r.nextInt(Engine.NUMBERS_COUNT + 1);
         String question = number + " " + number2;
         String answer = "";
 

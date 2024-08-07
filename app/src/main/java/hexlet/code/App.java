@@ -59,6 +59,7 @@ public class App {
                 Prime.makeGame();
                 break;
             default:
+                System.out.println("Oops, non-existent game number was entered");
                 break;
         }
     }
