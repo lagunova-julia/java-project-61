@@ -9,16 +9,18 @@ public class GCD {
         int number = r.nextInt(Engine.NUMBERS_COUNT + 1);
         int number2 = r.nextInt(Engine.NUMBERS_COUNT + 1);
         String question = number + " " + number2;
-        String answer = "";
+        String answer = getAnswer(number, number2);
+        return new String[]{question, answer};
+    }
 
+    private static String getAnswer(int number, int number2) {
         if (number == number2) {
-            answer = String.valueOf(number);
+            return String.valueOf(number);
         } else if (number == 0 || number2 == 0) {
-            answer = String.valueOf(0);
+            return String.valueOf(0);
         } else {
             int divindend = 0;
             int divisor = 0;
-            int modulo = 0;
             if (number > number2) {
                 divindend = number;
                 divisor = number2;
@@ -26,15 +28,17 @@ public class GCD {
                 divindend = number2;
                 divisor = number;
             }
-            do {
-                modulo = divindend % divisor;
-                answer = String.valueOf(divisor);
-                divindend = divisor;
-                divisor = modulo;
-            }
-            while (modulo != 0);
+            int result = findGCD(divindend, divisor);
+            return String.valueOf(result);
         }
-        return new String[]{question, answer};
+    }
+
+    public static int findGCD(int number, int number2) {
+        if (number2 == 0) {
+            return number;
+        } else {
+            return findGCD(number2, number % number2);
+        }
     }
 
     public static void makeGame() {
@@ -44,6 +48,5 @@ public class GCD {
             roundsData[i] = generateRoundData();
         }
         Engine.playGame(question, roundsData);
-
     }
 }

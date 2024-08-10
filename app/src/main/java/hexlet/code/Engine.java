@@ -13,7 +13,6 @@ public class Engine {
     public static final int NUMBERS_COUNT = 100;
 
     public static void playGame(String question, String[][] gameData) {
-
         System.out.println(question);
         int i = 0;
         String userName = App.getUserName();

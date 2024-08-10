@@ -14,8 +14,8 @@ public class Calc {
         Random r = new Random();
         int number = r.nextInt(Engine.NUMBERS_COUNT + 1);
         int number2 = r.nextInt(Engine.NUMBERS_COUNT + 1);
-
         int signNumber = r.nextInt(SIGNS_COUNT);
+
         int temp = 0;
         String answer = "";
         switch (signNumber) {
