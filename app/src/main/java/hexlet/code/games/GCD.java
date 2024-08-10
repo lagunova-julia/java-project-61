@@ -16,8 +16,10 @@ public class GCD {
     private static String getAnswer(int number, int number2) {
         if (number == number2) {
             return String.valueOf(number);
-        } else if (number == 0 || number2 == 0) {
-            return String.valueOf(0);
+        } else if (number == 0) {
+            return String.valueOf(number2);
+        } else if (number2 == 0) {
+            return String.valueOf(number);
         } else {
             int divindend = 0;
             int divisor = 0;
