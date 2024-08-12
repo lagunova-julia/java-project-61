@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
+    private static final String QUESTION = "What number is missing in the progression?";
     public static final int PROGRAMME_STEP = 10;
     public static final int MIN_NUMBERS = 5;
     public static final int MAX_NUMBERS = 10;
@@ -44,11 +45,10 @@ public class Progression {
     }
 
     public static void makeGame() {
-        String question = "What number is missing in the progression?";
         String[][] roundsData = new String[Engine.ROUNDS_COUNT][Engine.SAVE_DATA];
         for (int i = 0; i < Engine.ROUNDS_COUNT; i++) {
             roundsData[i] = generateRoundData();
         }
-        Engine.playGame(question, roundsData);
+        Engine.playGame(QUESTION, roundsData);
     }
 }
