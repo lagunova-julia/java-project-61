@@ -15,23 +15,12 @@ public class GCD {
     }
 
     private static String getAnswer(int number, int number2) {
-        if (number == number2) {
+        if (number == number2 || number2 == 0) {
             return String.valueOf(number);
         } else if (number == 0) {
             return String.valueOf(number2);
-        } else if (number2 == 0) {
-            return String.valueOf(number);
         } else {
-            int divindend = 0;
-            int divisor = 0;
-            if (number > number2) {
-                divindend = number;
-                divisor = number2;
-            } else {
-                divindend = number2;
-                divisor = number;
-            }
-            int result = findGCD(divindend, divisor);
+            int result = findGCD(Math.max(number, number2), Math.min(number, number2));
             return String.valueOf(result);
         }
     }
