@@ -14,34 +14,50 @@ public class Progression {
 
     public static String[] generateRoundData() {
         int a = (int) (Math.random() * Engine.NUMBERS_COUNT);
-        int d = (int) (Math.random() * PROGRAMME_STEP);
-        if (d == 0) {
-            while (d == 0) {
-                d = (int) (Math.random() * PROGRAMME_STEP);
-            }
-        }
-        int n = (int) (Math.random() * MAX_NUMBERS) + MIN_NUMBERS;
+        int d = getRandomStep();
+        int n = getRandomNumber();
         int answerPlace = (int) (Math.random() * n);
 
+        int[] progression = generateProgression(a, d, n);
+        String answer = makeAnswer(progression[answerPlace]);
+        String question = generateQuestion(progression, answerPlace, n);
+
+        return new String[]{question, answer};
+    }
+
+    private static int getRandomStep() {
+        int d = 0;
+        while (d == 0) {
+            d = (int) (Math.random() * PROGRAMME_STEP);
+        }
+        return d;
+    }
+
+    private static int getRandomNumber() {
+        return (int) (Math.random() * MAX_NUMBERS) + MIN_NUMBERS;
+    }
+
+    private static int[] generateProgression(int a, int d, int n) {
         int[] progression = new int[n];
         progression[0] = a;
         for (int i = 1; i < progression.length; i++) {
             progression[i] = progression[i - 1] + d;
         }
+        return progression;
+    }
 
-        String answer = makeAnswer(progression[answerPlace]);
-
+    private static String generateQuestion(int[] progression, int answerPlace, int n) {
         String[] newProgression = new String[n];
         for (int i = 0; i < newProgression.length; i++) {
             newProgression[i] = String.valueOf(progression[i]);
         }
-
         newProgression[answerPlace] = "..";
 
-        var tempStr = Arrays.toString(newProgression).replace('[', ' ').replace(']', ' ').replaceAll(",", "");
-        var question = tempStr.trim();
-
-        return new String[]{question, answer};
+        String tempStr = Arrays.toString(newProgression)
+                .replace('[', ' ')
+                .replace(']', ' ')
+                .replaceAll(",", "");
+        return tempStr.trim();
     }
 
     public static void makeGame() {
